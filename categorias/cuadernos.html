@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cuadernos</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="../productos.js"></script>
+</head>
+
+<body>
+
+  <div class="secciones">
+
+    <h2>Cuadernos</h2>
+
+    <div class="resultado" id="resultado"></div>
+
+  </div>
+
+  <script>
+
+    const resultado = document.getElementById("resultado");
+
+    const cuadernos = productos.filter(
+      p => p.categoria === "cuadernos"
+    );
+
+    cuadernos.forEach(p => {
+
+      resultado.innerHTML += `
+
+        <div class="tarjeta">
+
+          <img src="${p.imagen}" alt="${p.nombre}">
+
+          <h3>${p.nombre}</h3>
+
+          <p>Precio: ${p.precio}</p>
+
+        </div>
+
+      `;
+
+    });
+
+  </script>
+
+</body>
+</html>
